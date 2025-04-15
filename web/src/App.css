@@ -1,5 +1,13 @@
-body{
+.App{
+    position: 0,0;
     background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100vh;
+    width: 100vw;
 }
 h1,h2,h3,h4,h5,h6,p{
     color: white;
@@ -7,5 +15,8 @@ h1,h2,h3,h4,h5,h6,p{
     
 }
 .menu{
-    background-color: blue;
+    width: 20%;
+}
+.content{
+    width: 80%;
 }
