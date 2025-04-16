@@ -1,79 +1,106 @@
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
-  let selectedOption = 0;
+  const [selectedOption, setSelectedOption] = useState(0);
+
+  const renderContent = () => {
+    switch (selectedOption) {
+      case 0:
+        return <Article />;
+      case 1:
+        return <Home />;
+      case 2:
+        return <Book />;
+      case 3:
+        return <Quizes />;
+      default:
+        return <Article />;
+    }
+  };
+
   return (
     <div className="App">
-      <div>
-        if (selectedOption === 0) {
-          <Home />
-        } else if (selectedOption === 1) {
-          <Article />
-        } else if (selectedOption === 2) {
-          <Book />
-        } else if (selectedOption === 3) {
-          <Quizes /> 
-        }
-      </div>
+      <Menu setSelectedOption={setSelectedOption} />
+      {renderContent()}
     </div>
   );
 }
-function Menu(){
+
+function Menu({ setSelectedOption }) {
   return (
     <nav>
       <ul className="menu">
-        <li><h2 onClick>Domov</h2></li>
-        <li><h2>Články</h2></li>
-        <li><h2>Kniha</h2></li>
-        <li><h2>Kvízy</h2></li>
+        <li onClick={() => setSelectedOption(0)}><h2>Domov</h2></li>
+        <li onClick={() => setSelectedOption(1)}><h2>Články</h2></li>
+        <li onClick={() => setSelectedOption(2)}><h2>Kniha</h2></li>
+        <li onClick={() => setSelectedOption(3)}><h2>Kvízy</h2></li>
       </ul>
     </nav>
   );
 }
-function Article(){
-<>
-      <div className="menu">
-        <Menu />
-      </div>
-      <div className="content">
-        <h1 className="title">Historie IT</h1>
-        <p className="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque id nunc nec justo facilisis aliquet. Donec non odio at ligula venenatis efficitur. Sed euismod, nisi vel consectetur interdum, nisl nisi cursus enim, ac lacinia erat erat a augue.</p>
-      </div>
-   </>
-}
-function Book(){
-<>
-      <div className="menu">
-        <Menu />
-      </div>
-      <div className="content">
-        <h1 className="title">Historie IT</h1>
-        <p className="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque id nunc nec justo facilisis aliquet. Donec non odio at ligula venenatis efficitur. Sed euismod, nisi vel consectetur interdum, nisl nisi cursus enim, ac lacinia erat erat a augue.</p>
-      </div>
-   </>
-}
-function Quizes(){
-<>
-      <div className="menu">
-        <Menu />
-      </div>
-      <div className="content">
-        <h1 className="title">Historie IT</h1>
-        <p className="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque id nunc nec justo facilisis aliquet. Donec non odio at ligula venenatis efficitur. Sed euismod, nisi vel consectetur interdum, nisl nisi cursus enim, ac lacinia erat erat a augue.</p>
-      </div>
-   </>
-}
-function Home(){
+
+function Article() {
   return (
-    <>
-      <div className="menu">
-        <Menu />
+    <div className="content article">
+      <h1 className="title">Články</h1>
+      <div className="columns">
+        <div className="column">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et nisi quam...</p>
+        </div>
+        <div className="column">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et nisi quam...</p>
+        </div>
       </div>
-      <div className="content">
-        <h1 className="title">Historie IT</h1>
-        <p className="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque id nunc nec justo facilisis aliquet. Donec non odio at ligula venenatis efficitur. Sed euismod, nisi vel consectetur interdum, nisl nisi cursus enim, ac lacinia erat erat a augue.</p>
-      </div>
-   </>
+    </div>
   );
 }
+
+function Home() {
+  return (
+    <div className="content home">
+      <h1 className="title">Domov</h1>
+      <div className="grid">
+        {Array.from({ length: 6 }).map((_, index) => (
+          <div key={index} className="card">
+            <h2>#{index + 1}</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <button>Read more</button>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function Book() {
+  return (
+    <div className="content book">
+      <h1 className="title">Kniha</h1>
+      <div className="download-section">
+        <p>Stáhněte si knihu kliknutím na tlačítko níže:</p>
+        <a href="./Historie IT.pdf" download="Historie_IT.pdf" className="download-button">
+          Stáhnout PDF
+        </a>
+      </div>
+    </div>
+  );
+}
+
+function Quizes() {
+  return (
+    <div className="content quizes">
+      <h1 className="title">Kvízy</h1>
+      <div className="quiz">
+        <h2>Lorem ipsum dolor sit amet?</h2>
+        <ul>
+          <li>A: Lorem ipsum dolor sit amet</li>
+          <li>B: Lorem ipsum dolor sit amet</li>
+          <li>C: Lorem ipsum dolor sit amet</li>
+        </ul>
+      </div>
+    </div>
+  );
+}
+
 export default App;

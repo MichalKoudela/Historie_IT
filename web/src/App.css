@@ -1,6 +1,8 @@
-.App{
-    position: 0,0;
+.App {
+    text-align: center;
     background-color: black;
+    color: white;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -9,14 +11,92 @@
     height: 100vh;
     width: 100vw;
 }
-h1,h2,h3,h4,h5,h6,p{
+
+h1, h2, h3, h4, h5, h6, p {
     color: white;
     font-family: 'Rubik', sans-serif;
-    
 }
-.menu{
+
+.menu {
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+    padding: 1rem 0;
+    list-style: none;
     width: 20%;
 }
-.content{
+
+.menu li {
+    cursor: pointer;
+}
+
+.content {
+    padding: 2rem;
     width: 80%;
+}
+
+.home .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.card {
+    background: white;
+    color: black;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.article .columns {
+    display: flex;
+    gap: 1rem;
+}
+
+.article .column {
+    flex: 1;
+    background: white;
+    color: black;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.book .pagination {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+}
+
+.quizes .quiz {
+    background: white;
+    color: black;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.quiz ul {
+    list-style: none;
+    padding: 0;
+}
+
+.quiz li {
+    margin: 0.5rem 0;
+    background: #f0f0f0;
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+.download-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.download-button:hover {
+  background-color: #0056b3;
 }
