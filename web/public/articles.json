@@ -1,0 +1,65 @@
+[
+    {
+      "title": "První článek",
+      "date": "2025-04-18",
+      "text": "Toto je text prvního článku.",
+      "image": "/images/article1.jpg"
+    },
+    {
+      "title": "Druhý článek",
+      "date": "2025-04-17",
+      "text": "Toto je text druhého článku.",
+      "image": "/images/article2.jpg"
+    },
+    {
+        "title": "Třetí článek",
+        "date": "2025-04-17",
+        "text": "Toto je text druhého článku.",
+        "image": "/images/article3.jpg"
+    },
+    {
+        "title": "Čtvrtý článek",
+        "date": "2025-04-17",
+        "text": "Toto je text druhého článku.",
+        "image": "/images/article3.jpg"
+    },
+    {
+        "title": "Pátý článek",
+        "date": "2025-04-17",
+        "text": "Toto je text druhého článku.",
+        "image": "/images/article3.jpg"
+    },
+    {
+        "title": "Šestý článek",
+        "date": "2025-04-17",
+        "text": "Toto je text druhého článku.",
+        "image": "/images/article3.jpg"
+    }
+    ,
+    {
+        "title": "Sedmý článek",
+        "date": "2025-04-17",
+        "text": "Toto je text druhého článku.",
+        "image": "/images/article3.jpg"
+    },
+    {
+        "title": "Osmi článek",
+        "date": "2025-04-17",
+        "text": "Toto je text druhého článku.",
+        "image": "/images/article3.jpg"
+    }
+    ,
+    {
+        "title": "Devátý článek",
+        "date": "2025-04-17",
+        "text": "Toto je text druhého článku.",
+        "image": "/images/article3.jpg"
+    },
+    {
+        "title": "Desátý článek",
+        "date": "2025-04-17",
+        "text": "Toto je text druhého článku.",
+        "image": "/images/article3.jpg"
+    }
+
+  ]
