@@ -1,3 +1,6 @@
+body{
+    background-color: black;
+}
 .App {
     text-align: center;
     background-color: black;
@@ -59,8 +62,10 @@ h1 {
 
 .article .grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Dynamické sloupce */
+    gap: 1rem; /* Mezera mezi články */
+    width: 100%; /* Zajistí, že grid zabere celou šířku */
+    justify-items: center; /* Zarovnání článků na střed */
 }
 
 .card {
@@ -106,6 +111,27 @@ h1 {
     background: #f0f0f0;
     padding: 0.5rem;
     border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.quiz li:hover {
+    background: #e0e0e0;
+}
+
+.quiz li.correct {
+    background: #4caf50; /* Zelená pro správnou odpověď */
+    color: white;
+}
+
+.quiz li.incorrect {
+    background: #f44336; /* Červená pro špatnou odpověď */
+    color: white;
+}
+
+.special{
+    display: flex;
+    gap: 3rem;
 }
 
 .download-button {
