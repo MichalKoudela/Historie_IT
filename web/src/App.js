@@ -7,15 +7,15 @@ function App() {
   const renderContent = () => {
     switch (selectedOption) {
       case 0:
-        return <Article />;
-      case 1:
         return <Home />;
+      case 1:
+        return <Article />;
       case 2:
         return <Book />;
       case 3:
         return <Quizes />;
       default:
-        return <Article />;
+        return <Home />;
     }
   };
 
@@ -29,14 +29,12 @@ function App() {
 
 function Menu({ setSelectedOption }) {
   return (
-    <nav>
       <ul className="menu">
         <li onClick={() => setSelectedOption(0)}><h2>Domov</h2></li>
         <li onClick={() => setSelectedOption(1)}><h2>Články</h2></li>
         <li onClick={() => setSelectedOption(2)}><h2>Kniha</h2></li>
         <li onClick={() => setSelectedOption(3)}><h2>Kvízy</h2></li>
       </ul>
-    </nav>
   );
 }
 
@@ -44,22 +42,6 @@ function Article() {
   return (
     <div className="content article">
       <h1 className="title">Články</h1>
-      <div className="columns">
-        <div className="column">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et nisi quam...</p>
-        </div>
-        <div className="column">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et nisi quam...</p>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function Home() {
-  return (
-    <div className="content home">
-      <h1 className="title">Domov</h1>
       <div className="grid">
         {Array.from({ length: 6 }).map((_, index) => (
           <div key={index} className="card">
@@ -68,6 +50,22 @@ function Home() {
             <button>Read more</button>
           </div>
         ))}
+      </div>
+    </div>
+  );
+}
+
+function Home() {
+  return (
+    <div className="content home">
+      <h1 className="title">Články</h1>
+      <div className="columns">
+        <div className="column">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et nisi quam...</p>
+        </div>
+        <div className="column">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et nisi quam...</p>
+        </div>
       </div>
     </div>
   );
